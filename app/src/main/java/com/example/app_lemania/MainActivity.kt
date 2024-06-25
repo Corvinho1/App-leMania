@@ -118,7 +118,7 @@ fun MainContent(navController: NavHostController, score: Int, creditsPerClick: I
                 contentScale = ContentScale.Crop
             )
 
-            // Botão aleatório para adicionar 100 créditos
+            // Botão aleatório para adicionar creditos aleatorios de 50 a 500 créditos
             if (showRandomButton) {
                 RandomButton {
                     updateScore(score + Random.nextInt(50, 500))
@@ -136,7 +136,7 @@ fun RandomButton(onClick: () -> Unit) {
         modifier = Modifier
             .padding(8.dp)
     ) {
-        Text("Botão Aleatório")
+        Text("Surpresa!")
     }
 }
 @Preview(showBackground = true)
