@@ -31,7 +31,7 @@ fun MenuActivity() {
             contentDescription = "Apple Image",
             modifier = Modifier
                 .fillMaxWidth()
-                .height(200.dp)
+                .height(100.dp)
         )
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = {

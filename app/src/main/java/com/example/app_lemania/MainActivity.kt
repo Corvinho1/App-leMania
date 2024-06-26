@@ -78,7 +78,7 @@ fun MainContent(navController: NavHostController, score: Int, creditsPerClick: I
     // Estado para controlar a visibilidade do botão aleatório
     var showRandomButton by remember { mutableStateOf(false) }
 
-    // LaunchedEffect para exibir o botão aleatório com 40% de chance a cada 10 segundos
+    // LaunchedEffect para exibir o botão aleatório com 40% de chance a cada 10 segundos e para ver se tenho que ir para o menu ou não
     LaunchedEffect(Unit) {
         if (!confirmaMenu) {
             confirmaMenu = true
