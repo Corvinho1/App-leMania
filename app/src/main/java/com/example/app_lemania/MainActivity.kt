@@ -67,9 +67,12 @@ fun AppNavigator() {
                 autoclickers = newAutoclickers
             }
         }
+        composable("menu") {
+            MenuActivity()
+        }
     }
 }
-
+var confirmaMenu = false
 @Composable
 fun MainContent(navController: NavHostController, score: Int, creditsPerClick: Int, autoclickers: Int, updateScore: (Int) -> Unit) {
     // Estado para controlar a visibilidade do botão aleatório
@@ -77,6 +80,10 @@ fun MainContent(navController: NavHostController, score: Int, creditsPerClick: I
 
     // LaunchedEffect para exibir o botão aleatório com 40% de chance a cada 10 segundos
     LaunchedEffect(Unit) {
+        if (!confirmaMenu) {
+            confirmaMenu = true
+            navController.navigate("menu")
+        }
         while (true) {
             delay(10000L) // Delay de 10 segundos
             if (Random.nextFloat() < 0.4) { // 40% de chance
